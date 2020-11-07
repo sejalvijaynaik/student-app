@@ -1,0 +1,10 @@
+input[type="radio"]{
+    margin: 0 0 0 10px;
+}
+
+
+.required{
+    color: red;
+    position: relative;
+    top: 6px;
+}

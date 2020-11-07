@@ -1,0 +1,45 @@
+<div class="modal" id="formModal" #loginModal data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+  
+            <div class="modal-header">
+                <h4 class="modal-title">Login</h4>
+                <button type="button" class="close" data-dismiss="modal" (click) = "rediresctToList()" >&times;</button>
+            </div>
+     
+            <div class="modal-body">
+
+                <div [class] = "'required'" [style.display] = "loginMessageShow" [style.margin-bottom] = "'10px'">Username and or password is incorrect</div>
+                
+                <form class="form-horizontal" ngNativeValidate [formGroup]="loginForm">
+
+                    <div class="form-group row">
+                        <label class="control-label col-sm-2" for="usernameId" [style.text-align] = "'center'">Username</label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" id="usernameId" formControlName="username" required> 
+                        </div>
+                        <div class="col-sm-4">
+                            <span *ngIf = "username.invalid && (username.dirty || username.touched)" [class] = "'required'">Username is required</span>
+                        </div>
+                    </div>
+                
+                    <div class="form-group row">
+                        <label class="control-label col-sm-2" for="passwordId" [style.text-align] = "'center'">Name</label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" id="passwordId" formControlName="password" required>
+                        </div>
+                        <div class="col-sm-4">
+                                <span *ngIf = "password.invalid && (password.dirty || password.touched)" [class] = "'required'">Password is required</span>
+                        </div>
+                    </div>
+                
+                    <div class="form-group">
+                        <button [disabled]="!loginForm.valid" class="btn btn-primary" type="submit" (click) = "validate()" data-dismiss="modal">SUBMIT</button>
+                    </div>
+                    
+                  </form>
+            </div>
+  
+        </div>
+    </div>
+</div>
