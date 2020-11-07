@@ -13,6 +13,6 @@ export class LogoutComponent implements OnInit {
 
   ngOnInit(): void {
     this.authService.logOutUser();
-    window.location.href = "http://localhost:4200/list";
+    window.location.href = window.location.origin + "/list";
   }
 }

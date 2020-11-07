@@ -47,7 +47,7 @@ export class LoginComponent implements OnInit {
   validate():void{
     if(this.authService.checkLoginDetails(this.username.value, this.password.value) == true){
       this.authService.logInUser(this.username.value, this.password.value);
-      window.location.href = "http://localhost:4200/list";
+      window.location.href = window.location.origin + "/list";
     }
     else{
       console.log("login incorrect");

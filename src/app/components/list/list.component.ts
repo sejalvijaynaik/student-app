@@ -36,7 +36,4 @@ export class ListComponent implements OnInit {
       this.router.navigate(['/delete', id]);
     }
   }
-  checkStatus():void{
-    this.authService.checkStatus("admin", "admin");
-  }
 }
